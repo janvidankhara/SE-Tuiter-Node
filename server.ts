@@ -22,7 +22,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req: Request, res: Response) =>
-    res.send('Welcome!'));
+    res.send('Hello World!'));
 
 app.get('/add/:a/:b', (req: Request, res: Response) =>
     res.send(req.params.a + req.params.b));

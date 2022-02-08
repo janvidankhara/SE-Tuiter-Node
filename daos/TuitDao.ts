@@ -23,7 +23,7 @@ export default class TuitDao implements TuitDaoI {
         return await TuitModel.findById(tid);
     }
     async createTuit(tuit: Tuit): Promise<Tuit> {
-        return await TuitModel.create(tuit);
+        return await TuitModel.create({tuit});
     }
     async updateTuit(tid: string, tuit: Tuit): Promise<any> {
         return await TuitModel.updateOne({_id: tid}, {$set: tuit});
