@@ -51,7 +51,7 @@
        * @param tid Represents id of the tuit
        */
      userBookmarksTuit = async (uid: string, tid: string): Promise<any> =>
-         BookmarkModel.create({tuit: tid, bookmarkedBy: uid});
+         BookmarkModel.create({bookmarkedBy: uid, bookmarkedTuit: tid});
  
      /**
        * Removes a bookmark instance
