@@ -13,7 +13,7 @@
  
  export default interface Bookmark {
     bookmarkedBy: User,
-    bookmarkedTuit?: Tuit,
+    bookmarkedTuit: Tuit,
  };
  
  
