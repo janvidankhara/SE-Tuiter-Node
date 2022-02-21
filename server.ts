@@ -5,6 +5,7 @@
  *     <li>users</li>
  *     <li>tuits</li>
  *     <li>likes</li>
+ *     <li>bookmarks</li>
  * </ul>
  * 
  * Connects to a remote MongoDB instance hosted on the Atlas cloud database
@@ -14,6 +15,7 @@
  import UserController from "./controllers/UserController";
  import TuitController from "./controllers/TuitController";
  import LikeController from "./controllers/LikeController";
+ import BookmarkController from "./controllers/BookmarkController";
  import mongoose from "mongoose";
  
  
@@ -35,6 +37,7 @@
  const userController = UserController.getInstance(app);
  const tuitController = TuitController.getInstance(app);
  const likesController = LikeController.getInstance(app);
+ const bookmarksController = BookmarkController.getInstance(app);
  
  /**
   * Start a server listening at port 4000 locally
