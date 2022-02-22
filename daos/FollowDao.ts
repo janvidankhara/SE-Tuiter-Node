@@ -58,7 +58,7 @@
       */
 
      userUnfollowsAnotherUser = async (uid1: string, uid2: string): Promise<any> =>
-         FollowModel.deleteOne({_id: uid2});
+         FollowModel.deleteOne({followedBy: uid1, following: uid2});
  }
 
  
