@@ -39,7 +39,7 @@
       */
 
      findFollowers = async (uid: string): Promise<Follow[]> =>
-         FollowModel.find({followers: uid});
+         FollowModel.find({followedBy: uid});
 
     /**
       * Creates a new follow instance
