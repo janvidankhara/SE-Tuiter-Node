@@ -7,6 +7,6 @@ import Message from "../models/Message";
 export default interface TuitDao {
    incomingMessages(uid: string): Promise<Message[]>;
    outgoingMessages(uid: string): Promise<Message[]>;
-   userMessagesAnotherUser(uid1: string, uid2: string, messages: string): Promise<Message>;
-   userDeletesAMessage(uid1: string, uid2: string, messages: string): Promise<any>;
+   userMessagesAnotherUser(uid1: string, uid2: string, messages: Message): Promise<Message>;
+   userDeletesAMessage(uid1: string, uid2: string, messages: Message): Promise<any>;
 }
