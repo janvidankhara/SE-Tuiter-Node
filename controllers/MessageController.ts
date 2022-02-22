@@ -73,7 +73,7 @@
        * database
        */
        userMessagesAnotherUser = (req: Request, res: Response) =>
-         MessageController.messageDao.userMessagesAnotherUser(req.params.uid1, req.params.uid2)
+         MessageController.messageDao.userMessagesAnotherUser(req.params.uid1, req.body)
               .then((message: Message) => res.json(message));
   
       /**
@@ -84,7 +84,7 @@
        * on whether deleting a user was successful or not
        */
        userDeletesAMessage = (req: Request, res: Response) =>
-         MessageController.messageDao.userDeletesAMessage(req.params.uid1, req.params.uid2)
+         MessageController.messageDao.userDeletesAMessage(req.params.uid1, req.body)
               .then((status) => res.send(status));
   };
  
