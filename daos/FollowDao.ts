@@ -31,7 +31,7 @@
       */
     
      findFollowing = async (uid :string): Promise<Follow[]> =>
-         FollowModel.find({following: uid});
+         FollowModel.find({followedBy: uid});
 
     /**
       * Retrieves a list of users that are following them.
@@ -39,7 +39,7 @@
       */
 
      findFollowers = async (uid: string): Promise<Follow[]> =>
-         FollowModel.find({followedBy: uid});
+         FollowModel.find({following: uid});
 
     /**
       * Creates a new follow instance
