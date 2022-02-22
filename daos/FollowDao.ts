@@ -38,7 +38,7 @@
       * @param uid Represents id of the user.
       */
 
-     findFollowers = async (uid: string): Promise<any> =>
+     findFollowers = async (uid: string): Promise<Follow[]> =>
          FollowModel.find({followers: uid});
 
     /**
@@ -48,7 +48,7 @@
       */
     
      userFollowsAnotherUser= async (uid1: string, uid2: string): Promise<Follow> =>
-         FollowModel.create({uid1, following: uid2});
+         FollowModel.create({followedBy: uid1, following: uid2});
 
 
     /**
