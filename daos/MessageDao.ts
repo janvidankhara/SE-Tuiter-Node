@@ -47,8 +47,8 @@
       * @param uid2 Represents id of the user2.
       */
     
-     userMessagesAnotherUser= async (uid1: string, uid2: string): Promise<Mesaage> =>
-         MessageModel.create({from: uid1, to: uid2});
+     userMessagesAnotherUser= async (messages:string, uid1: string, uid2: string): Promise<Mesaage> =>
+         MessageModel.create({message: messages, from: uid1, to: uid2});
 
 
     /**
@@ -57,8 +57,8 @@
       * @param uid2 Represents id of the user2.
       */
 
-     userDeletesAMessage = async (uid1: string, uid2: string): Promise<any> =>
-         MessageModel.deleteOne({from: uid1, to: uid2});
+     userDeletesAMessage = async (messages:string, uid1: string, uid2: string): Promise<any> =>
+         MessageModel.deleteOne({message: messages,from: uid1, to: uid2});
  }
 
  
