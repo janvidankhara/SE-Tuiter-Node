@@ -56,11 +56,10 @@
       * Removes a message instance from the database
       * @param uid1 Represents id of the user1.
       * @param uid2 Represents id of the user2.
-      * @param messages Represents message of the user
       */
 
-     userDeletesAMessage = async (uid1: string, uid2: string,messages:Mesaage): Promise<any> =>
-         MessageModel.deleteOne({...messages,from: uid1, to: uid2});
+     userDeletesAMessage = async (uid1: string, uid2: string): Promise<any> =>
+         MessageModel.deleteOne({from: uid1, to: uid2});
  }
 
  

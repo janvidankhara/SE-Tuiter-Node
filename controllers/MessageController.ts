@@ -84,7 +84,7 @@
        * on whether deleting a user was successful or not
        */
        userDeletesAMessage = (req: Request, res: Response) =>
-         MessageController.messageDao.userDeletesAMessage(req.params.uid1,req.params.uid2, req.body)
+         MessageController.messageDao.userDeletesAMessage(req.params.uid1,req.params.uid2)
               .then((status) => res.send(status));
   };
  
