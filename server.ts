@@ -16,6 +16,7 @@
  import TuitController from "./controllers/TuitController";
  import LikeController from "./controllers/LikeController";
  import BookmarkController from "./controllers/BookmarkController";
+ import FollowController from './controllers/FollowController';
  import mongoose from "mongoose";
  
  
@@ -38,6 +39,7 @@
  const tuitController = TuitController.getInstance(app);
  const likesController = LikeController.getInstance(app);
  const bookmarksController = BookmarkController.getInstance(app);
+ const followController = FollowController.getInstance(app);
  
  /**
   * Start a server listening at port 4000 locally

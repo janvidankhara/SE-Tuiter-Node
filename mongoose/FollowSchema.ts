@@ -1,0 +1,11 @@
+ /**
+ * @file Implements mongoose schema for follow
+ */
+  import mongoose, {Schema} from "mongoose";
+  import Follow from "../models/Follow";
+  const FollowSchema = new mongoose.Schema<Follow>({
+      followedBy: {type: Schema.Types.ObjectId, ref: "UserModel"},
+      following: {type: Schema.Types.ObjectId, ref: "UserModel"},
+  }, {collection: "follow"});
+  export default FollowSchema;
+  
