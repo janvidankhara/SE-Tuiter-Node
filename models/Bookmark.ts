@@ -6,7 +6,7 @@
  import Tuit from "./Tuit";
 
  /**
-  * @typedef Bookmark Represents tuit posted by a user
+  * @typedef Bookmark Represents tuit bookmarked by a user
   * @property {User} bookmarkedBy User who bookmarked the tuit
   * @property {Tuit} bookmarkedTuit Tuit which is bookmarked
   */

@@ -1,5 +1,9 @@
 import {Request, Response} from "express";
 
+/**
+ * @file Declares interface for Tuit Controller.
+ */
+
 export default interface TuitController {
    findAllTuits(req: Request, res: Response): void;
    findTuitById(req: Request, res: Response): void;
