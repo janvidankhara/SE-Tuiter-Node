@@ -36,6 +36,7 @@ import BookmarkControllerI from "../interfaces/BookmarkController";
          if(BookmarkController.bookmarkController === null) {
             BookmarkController.bookmarkController = new BookmarkController();
              app.get("/api/tuits/:tid/bookmarks", BookmarkController.bookmarkController.findAllUsersThatBookmarkedTuit);
+             app.get("/api/users/:uid/bookmarks", BookmarkController.bookmarkController.findAllTuitsThatBookmarkedByAUser);
              app.post("/api/users/:uid/bookmarks/:tid", BookmarkController.bookmarkController.userBookmarksTuit);
              app.delete("/api/users/:uid/unbookmarks/:tid", BookmarkController.bookmarkController.userUnbookmarksTuit);
          }
@@ -47,13 +48,24 @@ import BookmarkControllerI from "../interfaces/BookmarkController";
      /**
       * Retrieves all users that bookmarked a tuit from the database
       * @param {Request} req Represents request from client, including the path
-      * parameter tid representing the liked tuit
+      * parameter tid representing the bookmarked tuit
       * @param {Response} res Represents response to client, including the
       * body formatted as JSON arrays containing the user objects
       */
      findAllUsersThatBookmarkedTuit = (req: Request, res: Response) =>
          BookmarkController.bookmarkDao.findAllUsersThatBookmarkedTuit(req.params.tid)
              .then(bookmarks => res.json(bookmarks ));
+
+     /**
+      * Retrieves all tuit that bookmarked a user from the database
+      * @param {Request} req Represents request from client, including the path
+      * parameter tid representing the bookmarked tuit
+      * @param {Response} res Represents response to client, including the
+      * body formatted as JSON arrays containing the user objects
+      */
+      findAllTuitsThatBookmarkedByAUser = (req: Request, res: Response) =>
+     BookmarkController.bookmarkDao.findAllTuitsThatBookmarkedByAUser(req.params.uid)
+         .then(bookmarks => res.json(bookmarks ));
  
      /**
       * Create a bookmark instance

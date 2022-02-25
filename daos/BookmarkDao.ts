@@ -33,6 +33,18 @@
              .find({tuit: tid})
              .populate("bookmarkedBy")
              .exec();
+
+     /**
+       * Retrieves all tuits that bookmarked a user from the database
+       * @param uid Represents id of the user
+       */
+ 
+      findAllTuitsThatBookmarkedByAUser = async (uid: string): Promise<Bookmark[]> =>
+      BookmarkModel
+          .find({user: uid})
+          .populate("bookmarkedTuit")
+          .exec();
+
  
      /**
        * Create a bookmark instance
