@@ -169,6 +169,584 @@ but use environment variable PORT on Heroku if available.
 
         
                 
+<h4 class="name" id="Bookmark">Bookmark</h4>
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>bookmarkedBy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#User">User</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">User who bookmarked the tuit</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bookmarkedTuit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Tuit">Tuit</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Tuit which is bookmarked</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mongoose_BookmarkSchema.js.html">mongoose/BookmarkSchema.js</a>, <a href="mongoose_BookmarkSchema.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Follow">Follow</h4>
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>followedBy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#User">User</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">User followed by another user</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>following</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#User">User</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">User following another user</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mongoose_FollowSchema.js.html">mongoose/FollowSchema.js</a>, <a href="mongoose_FollowSchema.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Follow">Follow</h4>
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Text which needs to be sent</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>to</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#User">User</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">User to whom messaged is to be sent</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>from</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#User">User</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">User who is sending a message</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sentOn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Date when message is sent</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mongoose_MessageSchema.js.html">mongoose/MessageSchema.js</a>, <a href="mongoose_MessageSchema.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Like">Like</h4>
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tuit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Tuit">Tuit</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Tuit being liked</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>likedBy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#User">User</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">User liking the tuit</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mongoose_LikeSchema.js.html">mongoose/LikeSchema.js</a>, <a href="mongoose_LikeSchema.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
 <h4 class="name" id="Tag">Tag</h4>
 
 
@@ -388,6 +966,571 @@ but use environment variable PORT on Heroku if available.
 
 
             
+                
+<h4 class="name" id="Tuit">Tuit</h4>
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tuit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">User writing a tuit</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>postedBy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#User">User</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">User who posted the tuit</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>postedOn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Date when the tuit was posted</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mongoose_TuitSchema.js.html">mongoose/TuitSchema.js</a>, <a href="mongoose_TuitSchema.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="User">User</h4>
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">id</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Id of the user</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>username</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Username of the user</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>password</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">of the user</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>firstName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">First name of the user</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lastName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Last name of the user</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Email id of the user</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>profilePhoto</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Profile picture of the user</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>headerImage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Header image of the user</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>biography</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Biography of the user</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dateOfBirth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Date of birth of the user</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>accountType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">AccountType</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Type of the account</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>maritalStatus</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">MaritalStatus</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Marital status of the user</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>location</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Location</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Location of the user</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>salary</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Salary of the user</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mongoose_UserSchema.js.html">mongoose/UserSchema.js</a>, <a href="mongoose_UserSchema.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
     
 
     
@@ -407,7 +1550,7 @@ but use environment variable PORT on Heroku if available.
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Feb 25 2022 10:14:05 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Feb 25 2022 13:32:09 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
