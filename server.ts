@@ -21,6 +21,7 @@
  import FollowController from './controllers/FollowController';
  import MessageController from './controllers/MessageController';
  import mongoose from "mongoose";
+ var cors = require('cors')
  
  
  // build the connection string
@@ -30,6 +31,7 @@
  
  const app = express();
  app.use(express.json());
+ app.use(cors());
  
  app.get('/', (req: Request, res: Response) =>
      res.send('Hello World!'));
