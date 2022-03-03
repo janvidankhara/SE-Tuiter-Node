@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import User from "../models/User";
 // axios.defaults.baseURL = 'http://localhost:4000/api';
-axios.defaults.baseURL = 'https://cs5500ass3.herokuapp.com/api';
+axios.defaults.baseURL = 'https://cs5500assignment3.herokuapp.com/api';
 
 const findAllUsers = async () =>
     await axios.get('/users');
@@ -31,4 +31,4 @@ const deleteUser = async (uid: string) =>
 // findUserById('61fe91c82902a4a7c81c4dd9')
 //     .then(response => console.log(response.data));
 // findAllUsers()
-//     .then(response => console.log(response.data)
+//     .then(response => console.log(response.data))
