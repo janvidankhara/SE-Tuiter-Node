@@ -35,6 +35,8 @@ import User from "../models/User";
              UserController.userController = new UserController();
              
              // for testing without postman. Not RESTful
+             app.get("/api/users", 
+                 UserController.userController.findAllUsers);
              app.get("/api/users/",
                  UserController.userController.createUser);
              app.get("/api/users/:uid",
