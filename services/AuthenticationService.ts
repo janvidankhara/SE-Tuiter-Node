@@ -80,4 +80,4 @@ login('alice008', 'alice234')
   .then(user => console.log(user))
 
 // userDao.findAllUsers()
-//   .then(users => console.log(users));
+//   .then(users => console.log(users);
