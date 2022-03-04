@@ -55,6 +55,8 @@ import User from "../models/User";
                  UserController.userController.deleteUser);
              app.delete("/api/users",
                  UserController.userController.deleteAllUsers);
+             app.post("/api/login",
+                 UserController.userController.login);
          }
          return UserController.userController;
      }
@@ -126,13 +128,25 @@ import User from "../models/User";
      deleteAllUsers = (req: Request, res: Response) =>
          UserController.userDao.deleteAllUsers()
              .then((status) => res.send(status));
-     
+
+     /**
+      * Logs in a user
+      * @param {Request} req Represents request from client 
+      * @param {Response} res Represents response to client, including status
+      * on whether deleting all users was successful or not
+      */
      login = (req: Request, res: Response) =>
          UserController.userDao.findUserByCredentials(req.body.username, req.body.password)
              .then(user => {
                  res.json(user)
              });
-     
+
+     /**
+      * Registers a user
+      * @param {Request} req Represents request from client 
+      * @param {Response} res Represents response to client, including status
+      * on whether deleting all users was successful or not
+      */
      register = (req: Request, res: Response) =>
          UserController.userDao.findUserByUsername(req.body.username)
              .then(user => {
