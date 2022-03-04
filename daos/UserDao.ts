@@ -86,6 +86,14 @@ export default class UserDao implements UserDaoI {
         UserModel.deleteMany({});
 
     /**
+      * Removes one user instances with specific username from the database. 
+      * @param username Represents user's username.
+      */
+
+     deleteUsersByUsername = async (username: string): Promise<any> =>
+     UserModel.deleteOne({username});
+
+    /**
       * Retrieves the user by their credentials.
       * @param username Represents the username of the user.
       * @param password Represents the password of the user.

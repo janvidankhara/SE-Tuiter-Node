@@ -35,12 +35,17 @@ import User from "../models/User";
              UserController.userController = new UserController();
              
              // for testing without postman. Not RESTful
-             app.get("/api/users/create",
+             app.get("/api/users/",
                  UserController.userController.createUser);
+             app.get("/api/users/:uid",
+                 UserController.userController.findUserById);
              app.get("/api/users/:uid/delete",
                  UserController.userController.deleteUser);
              app.get("/api/users/delete",
                  UserController.userController.deleteAllUsers);
+             app.get("/api/users/username/:username/delete", 
+                 UserController.userController.deleteUsersByUsername);
+
              
              // RESTful User Web service API
              app.get("/api/users",
@@ -55,6 +60,8 @@ import User from "../models/User";
                  UserController.userController.deleteUser);
              app.delete("/api/users",
                  UserController.userController.deleteAllUsers);
+             app.delete("/api/users/username/:username",
+                 UserController.userController.deleteUsersByUsername);
              app.post("/api/login",
                  UserController.userController.login);
          }
@@ -128,6 +135,16 @@ import User from "../models/User";
      deleteAllUsers = (req: Request, res: Response) =>
          UserController.userDao.deleteAllUsers()
              .then((status) => res.send(status));
+
+     /**
+      * Removes a user with specific username from the database. Useful for testing
+      * @param {Request} req Represents request from client 
+      * @param {Response} res Represents response to client, including status
+      * on whether deleting all users was successful or not
+      */
+      deleteUsersByUsername = (req: Request, res: Response) =>
+      UserController.userDao.deleteUsersByUsername(req.params.username)
+          .then((status) => res.send(status));
 
      /**
       * Logs in a user
