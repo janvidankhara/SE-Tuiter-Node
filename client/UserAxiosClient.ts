@@ -31,4 +31,4 @@ const deleteUser = async (uid: string) =>
 // findUserById('61fe91c82902a4a7c81c4dd9')
 //     .then(response => console.log(response.data));
 // findAllUsers()
-//     .then(response => console.log(response.data))
+//     .then(response => console.log(response.data)))
