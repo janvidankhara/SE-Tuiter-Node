@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "testEnvironment": "node"
+    },
   "scripts": {
     "start": "node build/server.js",
     "build": "tsc --project ./",
