@@ -82,7 +82,7 @@
       */
 
      deleteTuitsByBody = async (tuit: Tuit): Promise<any> =>
-         TuitModel.deleteOne({tuit});
+         TuitModel.deleteOne({...tuit});
  }
 
  
