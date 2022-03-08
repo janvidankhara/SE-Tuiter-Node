@@ -11,4 +11,5 @@ export default interface TuitController {
    createTuit(req: Request, res: Response): void;
    updateTuit(req: Request, res: Response): void;
    deleteTuit(req: Request, res: Response): void;
+   deleteTuitsByBody(req: Request, res: Response): void;
 }
