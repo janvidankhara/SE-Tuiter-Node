@@ -83,4 +83,12 @@
 
      deleteTuitByText = async (tuit: string): Promise<any> =>
          TuitModel.deleteMany({tuit});     
+
+    /**
+     * Removes tuit from the database. Used for testing
+     * @param {string} uid Primary key of the dummy user whose tuit to be removed
+     * @returns Promise To be notified when tuit is removed from the database
+     */
+    deleteTuitByUserId = async (uid: string): Promise<any> =>
+          TuitModel.deleteOne({postedBy: uid});
  }

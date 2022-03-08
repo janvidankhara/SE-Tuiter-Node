@@ -42,6 +42,8 @@
               app.put("/api/tuits/:uid", TuitController.tuitController.updateTuit);
               app.delete("/api/tuits/:uid", TuitController.tuitController.deleteTuit);
               app.get("/api/tuits/:tuits/delete",TuitController.tuitController.deleteTuitByText);
+              app.get("/api/tuits/:uid/delete", TuitController.tuitController.deleteTuitByUserId);
+
           }
           return TuitController.tuitController;
       }
@@ -126,5 +128,16 @@
        deleteTuitByText = (req: Request, res: Response) =>
        TuitController.tuitDao.deleteTuitByText(req.params.tuit)
            .then((status) => res.send(status));
+
+
+      /**
+     * @param {Request} req Represents request from client, including path
+     * parameter uid identifying the primary key of the dummy user's tuit to be removed
+     * @param {Response} res Represents response to client, including status
+     * on whether deleting a tuit was successful or not
+     */
+    deleteTuitByUserId = (req: Request, res: Response) =>
+    TuitController.tuitDao.deleteTuitByUserId(req.params.uid)
+        .then((status) => res.send(status));
       
   };
