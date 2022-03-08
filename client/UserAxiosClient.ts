@@ -20,7 +20,7 @@ const deleteUser = async (uid: string) =>
   await axios.delete(`/users/${uid}`);
 
 // deleteUser('6206b4ff02c280db0f2e62b5')
-//   .then(response => console.log(response.data));
+//   .then(response => console.log(response.data)))));
 
 // updateUser('6206b4ff02c280db0f2e62b5',
 //   {username: 'john', password: 'doe', email: 'joe@somebody.com'})
