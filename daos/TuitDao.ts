@@ -81,8 +81,8 @@
       * @param tuit Represents tuit's body.
       */
 
-     deleteTuitByText = async (tuit: Tuit): Promise<any> =>
-         TuitModel.deleteOne({tuit: tuit});
+     deleteTuitByText = async (tuit: string): Promise<any> =>
+         TuitModel.deleteOne({tuit});
  }
 
  

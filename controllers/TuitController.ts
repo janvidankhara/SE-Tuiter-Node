@@ -42,7 +42,7 @@ import TuitControllerI from "../interfaces/TuitController";
              app.post("/api/users/:uid/tuits", TuitController.tuitController.createTuit);
              app.put("/api/tuits/:uid", TuitController.tuitController.updateTuit);
              app.delete("/api/tuits/:uid", TuitController.tuitController.deleteTuit);
-             app.get("/api/tuits/tuit/:tuit/delete", TuitController.tuitController.deleteTuitByText);
+             app.get("/api/tuits/:tuit/delete", TuitController.tuitController.deleteTuitByText);
          }
          return TuitController.tuitController;
      }
@@ -124,7 +124,7 @@ import TuitControllerI from "../interfaces/TuitController";
       * on whether deleting all users was successful or not
       */
       deleteTuitByText = (req: Request, res: Response) =>
-         TuitController.tuitDao.deleteTuitByText(req.body)
+         TuitController.tuitDao.deleteTuitByText(req.params.tuit)
           .then((status) => res.send(status));
 
  };
