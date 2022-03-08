@@ -77,12 +77,12 @@
          TuitModel.deleteOne({_id: uid});
 
     /**
-      * Removes one tuit instances with specific body from the database. 
+      * Removes one tuit instances with specific content from the database. 
       * @param tuit Represents tuit's body.
       */
 
-     deleteTuitsByBody = async (tuit: Tuit): Promise<any> =>
-         TuitModel.deleteOne({tuit});
+     deleteTuitByText = async (tuit: Tuit): Promise<any> =>
+         TuitModel.deleteOne({tuit: tuit});
  }
 
  

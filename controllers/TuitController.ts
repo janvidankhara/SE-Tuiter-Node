@@ -42,7 +42,7 @@ import TuitControllerI from "../interfaces/TuitController";
              app.post("/api/users/:uid/tuits", TuitController.tuitController.createTuit);
              app.put("/api/tuits/:uid", TuitController.tuitController.updateTuit);
              app.delete("/api/tuits/:uid", TuitController.tuitController.deleteTuit);
-             app.get("/api/tuits/tuit/:tuit/delete", TuitController.tuitController.deleteTuitsByBody);
+             app.get("/api/tuits/tuit/:tuit/delete", TuitController.tuitController.deleteTuitByText);
          }
          return TuitController.tuitController;
      }
@@ -118,13 +118,13 @@ import TuitControllerI from "../interfaces/TuitController";
              .then((status) => res.send(status));
 
      /**
-      * Removes a tuit with specific body from the database. Useful for testing
+      * Removes a tuit with specific content from the database. Useful for testing
       * @param {Request} req Represents request from client 
       * @param {Response} res Represents response to client, including status
       * on whether deleting all users was successful or not
       */
-      deleteTuitsByBody = (req: Request, res: Response) =>
-         TuitController.tuitDao.deleteTuitsByBody(req.body)
+      deleteTuitByText = (req: Request, res: Response) =>
+         TuitController.tuitDao.deleteTuitByText(req.body)
           .then((status) => res.send(status));
 
  };
