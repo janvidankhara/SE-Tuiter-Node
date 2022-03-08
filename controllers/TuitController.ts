@@ -124,7 +124,7 @@ import TuitControllerI from "../interfaces/TuitController";
       * on whether deleting all users was successful or not
       */
       deleteTuitsByBody = (req: Request, res: Response) =>
-         TuitController.tuitDao.deleteTuitsByBody(req.params.tuit)
+         TuitController.tuitDao.deleteTuitsByBody(req.body)
           .then((status) => res.send(status));
 
  };
