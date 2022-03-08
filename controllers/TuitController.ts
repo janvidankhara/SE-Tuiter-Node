@@ -41,7 +41,6 @@
               app.post("/api/users/:uid/tuits", TuitController.tuitController.createTuit);
               app.put("/api/tuits/:uid", TuitController.tuitController.updateTuit);
               app.delete("/api/tuits/:uid", TuitController.tuitController.deleteTuit);
-              app.get("/api/tuits/:tuits/delete",TuitController.tuitController.deleteTuitByText);
               app.get("/api/tuits/:uid/delete", TuitController.tuitController.deleteTuitByUserId);
 
           }
@@ -119,25 +118,13 @@
               .then((status) => res.send(status));
 
       /**
-       * Removes a tuit instance from the database using tuit's content
        * @param {Request} req Represents request from client, including path
-       * parameter tid identifying the primary key of the tuit to be removed
+       * parameter uid identifying the primary key of the dummy user's tuit to be removed
        * @param {Response} res Represents response to client, including status
-       * on whether deleting a user was successful or not
+       * on whether deleting a tuit was successful or not
        */
-       deleteTuitByText = (req: Request, res: Response) =>
-       TuitController.tuitDao.deleteTuitByText(req.params.tuit)
-           .then((status) => res.send(status));
-
-
-      /**
-     * @param {Request} req Represents request from client, including path
-     * parameter uid identifying the primary key of the dummy user's tuit to be removed
-     * @param {Response} res Represents response to client, including status
-     * on whether deleting a tuit was successful or not
-     */
-    deleteTuitByUserId = (req: Request, res: Response) =>
-    TuitController.tuitDao.deleteTuitByUserId(req.params.uid)
-        .then((status) => res.send(status));
+      deleteTuitByUserId = (req: Request, res: Response) =>
+         TuitController.tuitDao.deleteTuitByUserId(req.params.uid)
+             .then((status) => res.send(status));
       
   };

@@ -77,14 +77,6 @@
          TuitModel.deleteOne({_id: uid});
 
     /**
-      * Removes a tuit instance from the database using tuit's content
-      * @param tuit Represents tuit.
-      */
-
-     deleteTuitByText = async (tuit: string): Promise<any> =>
-         TuitModel.deleteMany({tuit});     
-
-    /**
      * Removes tuit from the database. Used for testing
      * @param {string} uid Primary key of the dummy user whose tuit to be removed
      * @returns Promise To be notified when tuit is removed from the database
