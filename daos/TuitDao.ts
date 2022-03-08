@@ -82,7 +82,7 @@
       */
 
      deleteTuitByText = async (tuit: string): Promise<any> =>
-         TuitModel.deleteMany({tuit: tuit});
+         TuitModel.deleteMany({tuit});
  }
 
  
