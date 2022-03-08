@@ -35,18 +35,7 @@ import TuitControllerI from "../interfaces/TuitController";
      public static getInstance = (app: Express): TuitController => {
          if(TuitController.tuitController === null) {
              TuitController.tuitController = new TuitController();
-
-             app.get("/api/tuits", 
-                TuitController.tuitController.findAllTuits);
-          
-             app.get("/api/tuits/:uid", 
-                TuitController.tuitController.findTuitById);
-             app.post("/api/users/:uid/tuits", 
-                TuitController.tuitController.createTuit);
-             app.delete("/api/tuits/:uid", 
-                TuitController.tuitController.deleteTuit);
-
-                
+      
              app.get("/api/tuits", TuitController.tuitController.findAllTuits);
              app.get("/api/users/:uid/tuits", TuitController.tuitController.findTuitsByUser);
              app.get("/api/tuits/:uid", TuitController.tuitController.findTuitById);
