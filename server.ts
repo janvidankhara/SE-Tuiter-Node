@@ -21,7 +21,7 @@
  import FollowController from './controllers/FollowController';
  import MessageController from './controllers/MessageController';
  import mongoose from "mongoose";
- const cors = require('cors')
+ var cors = require('cors')
  const session = require("express-session");
  
  
