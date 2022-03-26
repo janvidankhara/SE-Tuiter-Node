@@ -21,7 +21,8 @@
  import FollowController from './controllers/FollowController';
  import MessageController from './controllers/MessageController';
  import mongoose from "mongoose";
- var cors = require('cors')
+ const cors = require('cors')
+ const session = require("express-session");
  
  
  // build the connection string
@@ -30,6 +31,27 @@
  mongoose.connect(connectionString);
  
  const app = express();
+ app.use(cors({
+    credentials: true,
+    origin: 'http://localhost:3000'
+}));
+
+const SECRET = 'process.env.SECRET';
+let sess = {
+    secret: SECRET,
+    saveUninitialized: true,
+    resave: true,
+    cookie: {
+        secure: false
+    }
+}
+
+if (process.env.ENVIRONMENT === 'PRODUCTION') {
+    app.set('trust proxy', 1) // trust first proxy
+    sess.cookie.secure = true // serve secure cookies
+}
+
+app.use(session(sess))
  app.use(express.json());
  app.use(cors());
  
