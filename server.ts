@@ -34,7 +34,7 @@
  const app = express();
  app.use(cors({
     credentials: true,
-    origin: 'http://localhost:3000'
+    origin: ["http://localhost:3000", 'https://fanciful-paprenjak-ad283a.netlify.app'] // "http://localhost:3000"
 }));
 
 const SECRET = 'process.env.SECRET';
