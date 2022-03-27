@@ -34,7 +34,7 @@
  const app = express();
  app.use(cors({
     credentials: true,
-    origin: ["http://localhost:3000", 'https://fanciful-paprenjak-ad283a.netlify.app'] // "http://localhost:3000"
+    origin: ['https://fanciful-paprenjak-ad283a.netlify.app']
 }));
 
 const SECRET = 'process.env.SECRET';
@@ -54,7 +54,6 @@ if (process.env.ENVIRONMENT === 'PRODUCTION') {
 
 app.use(session(sess))
  app.use(express.json());
- app.use(cors());
  
  app.get('/', (req: Request, res: Response) =>
      res.send('Hello World!'));
