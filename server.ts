@@ -35,7 +35,7 @@
  const app = express();
  app.use(cors({
     credentials: true,
-    origin: ['https://fanciful-paprenjak-ad283a.netlify.app']
+    origin: 'https://fanciful-paprenjak-ad283a.netlify.app'
 }));
 
 const SECRET = 'process.env.SECRET';
