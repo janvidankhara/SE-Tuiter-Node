@@ -21,6 +21,7 @@
  import FollowController from './controllers/FollowController';
  import MessageController from './controllers/MessageController';
  import AuthenticationController from "./controllers/AuthenticationController";
+ //import SessionController from './controllers/SessionController';
  import mongoose from "mongoose";
  const cors = require('cors')
  const session = require("express-session");
@@ -68,6 +69,7 @@ app.use(session(sess))
  const bookmarksController = BookmarkController.getInstance(app);
  const followController = FollowController.getInstance(app);
  const messageController = MessageController.getInstance(app);
+ //SessionController(app);
  AuthenticationController(app);
  
  /**

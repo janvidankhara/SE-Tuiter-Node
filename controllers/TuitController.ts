@@ -66,15 +66,9 @@
        * @param {Response} res Represents response to client, including the
        * body formatted as JSON arrays containing the tuit objects
        */
-       findTuitsByUser = (req: Request, res: Response) => {
-        // @ts-ignore
-        let userId = req.params.uid === "my" && req.session['profile'] ?
-            // @ts-ignore
-            req.session['profile']._id : req.params.uid;
-        TuitController.tuitDao.findTuitsByUser(userId)
-            .then((tuits: Tuit[]) => res.json(tuits));
-    }
-
+      findTuitsByUser = (req: Request, res: Response) =>
+          TuitController.tuitDao.findTuitsByUser(req.params.uid)
+              .then((tuits: Tuit[]) => res.json(tuits));
   
       /**
        * Retrieves all tuits from the database for a particular id and returns
@@ -97,17 +91,9 @@
        * body formatted as JSON containing the new tuit that was inserted in the
        * database
        */
-       createTuit = (req: Request, res: Response) => {
-        // @ts-ignore
-        let userId = req.params.uid === "my" && req.session['profile'] ?
-            // @ts-ignore
-            req.session['profile']._id : req.params.uid;
-
-        console.log(userId);
-        
-        TuitController.tuitDao.createTuit(userId, req.body)
-            .then((tuit: Tuit) => res.json(tuit));
-    }
+      createTuit = (req: Request, res: Response) =>
+          TuitController.tuitDao.createTuit(req.params.uid, req.body)
+              .then((tuit: Tuit) => res.json(tuit));
   
       /**
        * Modifies an existing tuit instance
