@@ -68,7 +68,7 @@
        */
        findTuitsByUser = (req: Request, res: Response) => {
         // @ts-ignore
-        let userId = req.params.uid === 'me' && req.session['profile'] ?
+        let userId = req.params.uid === 'my' && req.session['profile'] ?
             // @ts-ignore
             req.session['profile']._id : req.params.uid;
         TuitController.tuitDao.findTuitsByUser(userId)
@@ -99,7 +99,7 @@
        */
        createTuit = (req: Request, res: Response) => {
         // @ts-ignore
-        let userId = req.params.uid === 'me' && req.session['profile'] ?
+        let userId = req.params.uid === 'my' && req.session['profile'] ?
             // @ts-ignore
             req.session['profile']._id : req.params.uid;
         console.log(userId);
