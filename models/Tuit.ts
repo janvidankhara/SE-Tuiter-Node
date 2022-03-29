@@ -3,7 +3,6 @@
  * users and tuits, as in user posted, updated or deleted a tuit
  */
 import User from "./User";
-import Stats from "./Stats";
 
 /**
  * @typedef Tuit Represents tuit posted by a user,
@@ -13,13 +12,8 @@ import Stats from "./Stats";
  */
 
 export default interface Tuit {
-    tuit: string,
-    postedBy: User,
-    postedOn?: Date,
-    image?: String,
-    youtube?: String,
-    avatarLogo?: String,
-    imageOverlay?: String,
-    stats: Stats
+   tuit: string,
+   postedBy: User,
+   postedOn?: Date,
 };
 
