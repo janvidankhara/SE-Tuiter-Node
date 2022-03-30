@@ -35,7 +35,7 @@ import TuitDao from "../daos/TuitDao";
      public static getInstance = (app: Express): DislikeController => {
          if(DislikeController.dislikeController === null) {
             DislikeController.dislikeController = new DislikeController();
-             app.get("/api/users/:uid/dislikes/:tid", DislikeController.dislikeController.findUserDislikedTuit);
+             app.get("/api/users/:uid/dislikes/:tid", DislikeController.dislikeController.findAllTuitsDislikedByUser);
              app.put("/api/users/:uid/dislikes/:tid", DislikeController.dislikeController.userTogglesTuitDislikes);
          }
          return DislikeController.dislikeController;
@@ -51,7 +51,7 @@ import TuitDao from "../daos/TuitDao";
       * @param {Response} res Represents response to client, including the
       * body formatted as JSON arrays containing the tuit objects that were liked
       */
-      findUserDislikedTuit = (req: Request, res: Response) => {
+      findAllTuitsDislikedByUser = (req: Request, res: Response) => {
         const uid = req.params.uid;
         const tid = req.params.tid;
         // @ts-ignore
