@@ -23,6 +23,7 @@ import LikeDao from "../daos/LikeDao";
   */
 
 
+
  export default class DislikeController implements DislikeControllerI {
      private static dislikeDao: DislikeDao = DislikeDao.getInstance();
      private static tuitDao: TuitDao = TuitDao.getInstance();
@@ -43,6 +44,7 @@ import LikeDao from "../daos/LikeDao";
          return DislikeController.dislikeController;
      }
  
+
      private constructor() {}
  
      
@@ -56,6 +58,7 @@ import LikeDao from "../daos/LikeDao";
 
       findAllTuitsDislikedByUser = (req: Request, res: Response) => {
         const uid = req.params.uid;
+        const tid = req.params.tid;
         // @ts-ignore
         const profile = req.session['profile'];
         const userId = uid === 'me' && profile ?
@@ -66,7 +69,7 @@ import LikeDao from "../daos/LikeDao";
             const dislikesNonNullTuits = dislikes.filter(dislike => dislike.tuit);
             const tuitsFromDislikes = dislikesNonNullTuits.map(dislike => dislike.tuit);
             res.json(tuitsFromDislikes);
-            
+
         });
     }
     
