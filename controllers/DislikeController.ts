@@ -62,11 +62,11 @@ import LikeDao from "../daos/LikeDao";
             profile._id : uid;
 
         DislikeController.dislikeDao.findAllTuitsDislikedByUser(userId)
-            .then(dislikes => {
-                const dislikesNonNullTuits = dislikes.filter(dislike => dislike.tuit);
-                const tuitsFromDislikes = dislikesNonNullTuits.map(dislike => dislike.tuit);
-                res.json(tuitsFromDislikes);
-            });
+        .then(dislikes => {
+            const dislikesNonNullTuits = dislikes.filter(dislike => dislike.tuit);
+            const tuitsFromDislikes = dislikesNonNullTuits.map(dislike => dislike.tuit);
+            res.json(tuitsFromDislikes);
+        });
     }
     
 
