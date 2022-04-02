@@ -34,10 +34,10 @@
           .populate("dislikedBy")
           .exec();
 
-      /**
-        * Retrieves all tuits disliked by a user from the database
-        * @param uid Represents id of the user
-        */
+        /**
+          * Retrieves all tuits disliked by a user from the database
+          * @param uid Represents id of the user
+          */
 
        findAllTuitsDislikedByUser = async (uid: string): Promise<Dislike[]> =>
        DislikeModel

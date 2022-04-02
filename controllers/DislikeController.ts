@@ -53,7 +53,7 @@ import LikeDao from "../daos/LikeDao";
       * @param {Response} res Represents response to client, including the
       * body formatted as JSON arrays containing the tuit objects that were liked
       */
-     
+
       findAllTuitsDislikedByUser = (req: Request, res: Response) => {
         const uid = req.params.uid;
         // @ts-ignore
@@ -63,7 +63,6 @@ import LikeDao from "../daos/LikeDao";
 
         DislikeController.dislikeDao.findAllTuitsDislikedByUser(userId)
             .then(dislikes => {
-                
                 const dislikesNonNullTuits = dislikes.filter(dislike => dislike.tuit);
                 const tuitsFromDislikes = dislikesNonNullTuits.map(dislike => dislike.tuit);
                 res.json(tuitsFromDislikes);
