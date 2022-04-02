@@ -66,6 +66,7 @@ import LikeDao from "../daos/LikeDao";
             const dislikesNonNullTuits = dislikes.filter(dislike => dislike.tuit);
             const tuitsFromDislikes = dislikesNonNullTuits.map(dislike => dislike.tuit);
             res.json(tuitsFromDislikes);
+            
         });
     }
     
