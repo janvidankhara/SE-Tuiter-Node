@@ -1,5 +1,7 @@
 import {Request, Response, Express} from "express";
+import { runInNewContext } from "vm";
 import UserDao from "../daos/UserDao";
+import UserModel from "../mongoose/UserModel";
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
@@ -25,6 +27,8 @@ const AuthenticationController = (app: Express) => {
             res.sendStatus(403);
         }
     }
+
+
 
     const register = async (req: Request, res: Response) => {
         const newUser = req.body;
@@ -64,6 +68,7 @@ const AuthenticationController = (app: Express) => {
         res.sendStatus(200);
     }
 
+   
     app.post("/api/auth/login", login);
     app.post("/api/auth/register", register);
     app.post("/api/auth/profile", profile);

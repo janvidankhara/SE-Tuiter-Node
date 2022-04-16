@@ -48,7 +48,8 @@ import User from "../models/User";
              app.get("/api/users/username/:username/delete", 
                  UserController.userController.deleteUsersByUsername);
 
-             
+            app.get("/api/users/username/:username", 
+                UserController.userController.findUserByUsername);
              // RESTful User Web service API
              app.get("/api/users",
                  UserController.userController.findAllUsers);
@@ -93,6 +94,9 @@ import User from "../models/User";
          UserController.userDao.findUserById(req.params.uid)
              .then((user: User) => res.json(user));
      
+     findUserByUsername = (req: Request, res: Response) =>
+        UserController.userDao.findUserByUsername(req.params.username)
+            .then((user:User) => res.json(user));
      /**
       * Creates a new user instance
       * @param {Request} req Represents request from client, including body
@@ -171,5 +175,6 @@ import User from "../models/User";
              .then(user => {
                  
              })
+
  };
 

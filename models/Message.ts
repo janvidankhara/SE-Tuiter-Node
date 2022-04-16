@@ -12,7 +12,8 @@
   * @property {Date} sentOn Date when message is sent
   */
  
- export default interface Follow {
+ export default interface Message {
+    conversationId: string,
     message: string
     to: User,
     from: User,

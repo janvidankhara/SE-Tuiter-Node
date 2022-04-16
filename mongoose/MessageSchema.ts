@@ -13,6 +13,7 @@
   */
  
   const MessageSchema = new mongoose.Schema<Message>({
+      conversationId: String,
       message: String,
       to: {type: Schema.Types.ObjectId, ref: "UserModel"},
       from: {type: Schema.Types.ObjectId, ref: "UserModel"},

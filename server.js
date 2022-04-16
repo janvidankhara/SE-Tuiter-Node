@@ -4,8 +4,12 @@
 const express = require('express');
 const app = express();
 
+
+app.use(express.json())
 app.get('/hello', (req, res) =>
   res.send('Hello World!'));
+
+
 
 /**
   * Start a server listening at port 4000 locally
@@ -14,3 +18,4 @@ app.get('/hello', (req, res) =>
 
 const PORT = 4000;
 app.listen(PORT);
+
