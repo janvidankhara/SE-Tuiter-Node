@@ -46,7 +46,7 @@
  const app = express();
  app.use(cors({
     credentials: true,
-    origin: 'https://jazzy-bonbon-7f0eba.netlify.app'
+    origin: "https://jazzy-bonbon-7f0eba.netlify.app"
 }));
 
 const SECRET = 'process.env.SECRET';
