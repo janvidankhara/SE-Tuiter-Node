@@ -44,6 +44,22 @@
  mongoose.connect(connectionString);
  
  const app = express();
+ const http = require("http");
+ const server = http.createServer(app);
+
+ var io =  require("socket.io")(server, {
+       origin: '*:*',
+       requestCert: true,
+       rejectUnauthorized: false,
+       transports:
+         ['websocket',
+         'flashsocket',
+         'htmlfile',
+         'xhr-polling',
+         'jsonp-polling',
+         'polling']
+     });
+
  app.use(cors({
     credentials: true,
     origin: "https://jazzy-bonbon-7f0eba.netlify.app"
@@ -70,8 +86,8 @@ app.use(session(sess))
  app.get('/', (req: Request, res: Response) =>
      res.send('Hello World!'));
 
- app.get('/add/:a/:b', (req: Request, res: Response) =>
-     res.send(req.params.a + req.params.b));
+//  app.get('/add/:a/:b', (req: Request, res: Response) =>
+//      res.send(req.params.a + req.params.b));
  
  // create RESTful Web service API
  const userController = UserController.getInstance(app);
@@ -87,7 +103,7 @@ app.use(session(sess))
  
  /**
   * Start a server listening at port 4000 locally
-  * but use environment variable PORT on Heroku if available.
+  * but use environment variable PORT on Heroku if availableaa.
   */
  const PORT = 4000;
  app.listen(process.env.PORT || PORT);

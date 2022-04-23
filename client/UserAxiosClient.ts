@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import User from "../models/User";
 //axios.defaults.baseURL = 'http://localhost:4000/api';
+//axios
 axios.defaults.baseURL = 'https://se-tuiter-project-backend.herokuapp.com/api';
 
 const findAllUsers = async () =>
